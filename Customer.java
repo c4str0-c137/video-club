@@ -12,6 +12,9 @@ class Customer {
     public void addRental( Rental arg) {
         _rentals.addElement(arg);
     }
+    public Vector getRental(){
+        return  _rentals;
+    }
     public String getName (){
         return _name;
     }
