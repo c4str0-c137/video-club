@@ -1,7 +1,7 @@
 import java.util.Enumeration;
 import java.util.Vector;
 
-class Customer {
+public class Customer {
     private String _name;
     private Vector _rentals = new Vector();
     
@@ -36,21 +36,6 @@ class Customer {
             Rental aRental = (Rental) rentals.nextElement();
             result += aRental.getFrequentRenterPoints();            
         }
-        return result;
-    }
-    public String statement() {
-        Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements() ) {
-            Rental aRental = (Rental) rentals.nextElement();
-            //show figures for this rental
-            result += "\t" + aRental.getMovie().getTitle()+ "\t" + String.valueOf(aRental.getCharge()) + "\n";
-        }
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(getTotalCharge()) +"\n";
-        
-        result += "You earned " + String.valueOf(getFrequentRenterPoints()) + " frequent renter points";
-        System.out.println(result);
         return result;
     }
     public String htmlstatement() {
